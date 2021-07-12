@@ -2,6 +2,7 @@ from time import sleep
 import random
 from string import ascii_letters
 from colorama import Fore, Style
+import os
 
 title = f'''{Fore.GREEN}{Style.BRIGHT}
   e88'Y88 ,e,          888                              e88 88e         e88 88e         d88 
@@ -12,6 +13,8 @@ C8888     888 888 888b 888 88b d88 88b 888 "    888   C8888 8888D     C8888 8888
               888                                                                           
               888                                                                           
 '''
+
+divider = f'{Fore.GREEN}{Style.BRIGHT}' + ('=' * os.get_terminal_size().columns)
 
 initialising = f'''
 ooooo              o8o      .    o8o            oooo   o8o            o8o                                          
@@ -24,6 +27,33 @@ o888o o888o o888o o888o   "888" o888o `Y888""8o o888o o888o 8""888P' o888o o888o
                                                                                        d"     YD                   
                                                                                        "Y88888P'                                                                                                                  
 '''
+
+technobabble_words = {
+    "verbs" : [
+        "flushing",
+        "extending",
+        "energising",
+        "initialising",
+        "targetting"
+    ],
+    "adjectives" : [
+        "crypto",
+        "efficient",
+        "global",
+        "local"
+    ],
+    "nouns" : [
+        "portal",
+        "decrypter",
+        "encrypter",
+        "mind-palace",
+        "808s",
+        "AI",
+        "compressor",
+        "compression",
+        "variable"
+    ]
+}
 
 def encode(string):
     output = ''
@@ -69,3 +99,10 @@ def type_animation(string, speed):
         output += character
         print(f'\r{output}', end='', flush=True)
         sleep(speed)
+
+def technobabble():
+    print(f'{Fore.GREEN}{Style.BRIGHT}Loading . . .')
+    for _ in range(random.randint(7,10)):
+        output = f"{Fore.RED}{random.choice(technobabble_words['verbs'])} {random.choice(technobabble_words['adjectives'])} {random.choice(technobabble_words['nouns'])} . . ."
+        type_animation(output, 0.02)
+        print()
