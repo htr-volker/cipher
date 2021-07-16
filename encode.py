@@ -1,7 +1,7 @@
-import functions
+from application import functions, animations
 
 def main():
-    functions.type_animation('Enter filename: ', 0.05)
+    animations.type_animation('Enter filename: ', 0.05)
     filename = input()
     encode_file(filename)
     print(f'{filename} encoded and saved to {filename}_encoded')

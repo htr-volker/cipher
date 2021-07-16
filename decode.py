@@ -20,20 +20,8 @@ def main():
     animations.sleep(3)
 
     # Decode
-    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border(fill="-")}')
-    animations.sleep(0.1)
-    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border(message=f"{animations.Fore.YELLOW}Initialising . . .{animations.Fore.GREEN}", fill="-")}')
-    animations.sleep(0.1)
-    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border(fill="-")}')
-    animations.sleep(1)
-    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border(message=f"{animations.Fore.YELLOW}OUTPUT:{animations.Fore.GREEN}", fill="-")}')
-    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border()}')
-    animations.sleep(1)
-
     decode_file(filename)
-    print()
-    animations.sleep(1)
-
+    
     # Close
     animations.type_animation(f'{animations.Style.BRIGHT}{animations.Fore.GREEN}Decoding Successful.', 0.05)
     animations.sleep(0.5)
@@ -46,6 +34,16 @@ def main():
 
 
 def decode_file(filename):
+    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border(fill="-")}')
+    animations.sleep(0.1)
+    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border(message=f"{animations.Fore.YELLOW}Initialising . . .{animations.Fore.GREEN}", fill="-")}')
+    animations.sleep(0.1)
+    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border(fill="-")}')
+    animations.sleep(1)
+    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border(message=f"{animations.Fore.YELLOW}START OF FILE{animations.Fore.GREEN}", fill="-")}')
+    print(f'{animations.Style.RESET_ALL}{animations.Fore.GREEN}{animations.decode_border()}')
+    animations.sleep(1)
+
     with open(filename, "r") as file:
         contents = file.readlines()
 
@@ -67,8 +65,11 @@ def decode_file(filename):
                 file.write(line)
         animations.sleep(1)
         print()
-        print(f"{animations.Fore.GREEN}Output saved to {animations.Style.RESET_ALL}{filename}")
+        animations.type_animation(f"{animations.Fore.GREEN}Output saved to {animations.Style.RESET_ALL}{filename}", 0.05)
+        print()
     
+    animations.sleep(1)
+    print()
     animations.sleep(1)
 
 if __name__ == "__main__": main()

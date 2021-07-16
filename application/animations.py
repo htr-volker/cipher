@@ -46,7 +46,12 @@ technobabble_words = {
         "retrofitting",
         "launching",
         "closing",
-        "establishing"
+        "establishing",
+        "downloading",
+        "connecting",
+        "stopping",
+        "liberating",
+        "opening"
     ],
     "adjectives" : [
         "crypto",
@@ -96,7 +101,7 @@ def type_animation(string, speed):
 
 def load_animation(number, speed):
     unit = "kB"
-    for i in range(0,number,5):
+    for i in range(0,number,10):
         if i >= 1024:
             value = f"{(i/1000):.2}"
             unit = 'MB '
@@ -109,12 +114,12 @@ def load_animation(number, speed):
 def decode_animation(string, speed):
     output = ''
     for character in string:
-        for _ in range(0,random.randint(3,15)):
+        for _ in range(0,random.randint(1,4)):
             message = f'{Fore.LIGHTGREEN_EX}{output}{Fore.YELLOW}{random.choice(ascii_letters)}{Fore.GREEN}'
             print(f'\r{Style.RESET_ALL}{Fore.GREEN}{decode_border(message=message)}', end='', flush=True)
             sleep(speed)
         output += character
-    message = f'{Fore.LIGHTCYAN_EX}{output}{Fore.GREEN} ✓'
+    message = f'{Style.BRIGHT}{Fore.GREEN}{output}{Fore.GREEN} ✓'
     print(f'\r{Style.RESET_ALL}{Fore.GREEN}{decode_border(message=message)}', flush=True)
     sleep(0.5)
 
