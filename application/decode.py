@@ -1,4 +1,4 @@
-from application import functions, animations
+import functions, animations
 import os
 
 def main():
@@ -65,7 +65,7 @@ def decode_file(filename):
                 file.write(line)
         animations.sleep(1)
         print()
-        animations.type_animation(f"{animations.Fore.GREEN}Output saved to {animations.Style.RESET_ALL}{filename}", 0.05)
+        animations.type_animation(f"{animations.Fore.GREEN}Output saved to {animations.Style.RESET_ALL}{filename}_decoded", 0.05)
         print()
     
     animations.sleep(1)

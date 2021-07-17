@@ -1,4 +1,4 @@
-from application import functions, animations
+import functions, animations
 
 def main():
     animations.type_animation('Enter filename: ', 0.05)
