@@ -89,6 +89,6 @@ cipher-encode
 
 A much simpler UI will appear on your terminal prompting you to provide the filename whose contents you'd like to encode.
 
-It will then create a new file with the encoded output.
+It will then create a new file with the encoded output with the name `<original_filename>_encoded`.
 
 Files encoded with `cipher-encode` can then be decoded with `cipher-decode`.
